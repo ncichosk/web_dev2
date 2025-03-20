@@ -7,7 +7,7 @@ const {registerValidation, loginValidation} = require('../validations/validation
 const bcryptjs = require('bcryptjs')
 const jsonwebtoken = require('jsonwebtoken')
 
-router.post('/register', async(req,res)=>{
+router.post('/register', async(req,res)=>{ // Register new users
 
     const {error} = registerValidation(req.body)
     if(error){
@@ -37,7 +37,7 @@ router.post('/register', async(req,res)=>{
 
 })
 
-router.post('/login', async(req,res)=>{
+router.post('/login', async(req,res)=>{ // Login existing users
 
     // Validation 1 to check user input
     const {error} = loginValidation(req.body)

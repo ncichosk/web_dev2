@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const User = require('../models/User')
 
-const PostSchema = mongoose.Schema({
+const PostSchema = mongoose.Schema({ // Define post schema
     title:{
         type:String,
         require:true,

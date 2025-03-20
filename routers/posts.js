@@ -23,6 +23,7 @@ router.post('/', verifyToken, async (req, res) => {
     }
 });
 
+// Like a post - requires authentificaiton
 router.post('/:postId/like', verifyToken, async(req,res) =>{
     try{
         const post = await Post.findById(req.params.postId);
@@ -58,6 +59,7 @@ router.get('/:postId', async(req,res) =>{
     }
 })
 
+// Update a post - requires authentificaiton and must be same user
 router.patch('/:postId', verifyToken, async(req,res) => {
     const post = await Post.findById(req.params.postId);
     if (!post) {
@@ -81,6 +83,7 @@ router.patch('/:postId', verifyToken, async(req,res) => {
     }
 })
 
+// Delete a post - requires authentificaiton and must be same user
 router.delete('/:postId', verifyToken, async(req,res) =>{
     const post = await Post.findById(req.params.postId);
     if (!post) {
